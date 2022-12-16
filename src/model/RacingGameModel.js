@@ -12,6 +12,12 @@ class RacingGameModel {
       this.#cars.push(new Car(singleCarName));
     }
   }
+
+  calculateCase() {
+    for (let i = 0; i < this.#cars.length; i++) {
+      this.#cars[i].tryMove();
+    }
+  }
 }
 
 module.exports = RacingGameModel;
