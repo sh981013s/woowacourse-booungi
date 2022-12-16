@@ -26,6 +26,38 @@ class RacingGameModel {
     }
     return carsInformation;
   }
+
+  getHighestScore() {
+    const totalMovements = [];
+    for (const singleCar of this.#cars) {
+      totalMovements.push(singleCar.getCarInformation().movement);
+    }
+
+    return Math.max(...totalMovements);
+  }
+
+  getWinnerNames(winners) {
+    const winnerNames = [];
+
+    for (const singleWinner of winners) {
+      winnerNames.push(singleWinner.getCarInformation().name);
+    }
+
+    return winnerNames;
+  }
+
+  getWinner() {
+    const winners = this.#cars.filter(
+      (carInformation) =>
+        carInformation.getCarInformation().movement === this.getHighestScore(),
+    );
+
+    return this.getWinnerNames(winners);
+  }
+
+  getResults() {
+    return this.getWinner();
+  }
 }
 
 module.exports = RacingGameModel;
