@@ -1,5 +1,6 @@
 const BaseInformationController = require("./BaseInformationController");
 const RacingGameController = require("./RacingGameController");
+const InputView = require("../view/InputView");
 
 class MainController {
   #baseInformationController;
@@ -8,6 +9,16 @@ class MainController {
   constructor() {
     this.#baseInformationController = new BaseInformationController(this);
     this.#racingGameController = new RacingGameController(this);
+  }
+
+  processCarNamesInput(carNamesInput) {}
+
+  readCarNamesInput() {
+    InputView.readCarNamesInput(this.processCarNamesInput.bind(this));
+  }
+
+  initializeGame() {
+    this.readCarNamesInput();
   }
 }
 
