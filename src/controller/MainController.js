@@ -11,7 +11,9 @@ class MainController {
     this.#racingGameController = new RacingGameController(this);
   }
 
-  processCarNamesInput(carNamesInput) {}
+  processCarNamesInput(carNamesInput) {
+    this.#baseInformationController.processCarNamesInput(carNamesInput);
+  }
 
   readCarNamesInput() {
     InputView.readCarNamesInput(this.processCarNamesInput.bind(this));
