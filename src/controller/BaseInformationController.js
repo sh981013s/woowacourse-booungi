@@ -19,6 +19,16 @@ class BaseInformationController {
       this.#mainController.printError(errorLog);
     }
   }
+
+  processTryCountInput(tryCountInput) {
+    try {
+      validate(tryCountInput);
+      this.#baseInformationModel.setTryCount(+tryCountInput);
+      this.#mainController.generateCars(this.#baseInformationModel.getCarNames());
+    } catch (errorLog) {
+      this.#mainController.printError(errorLog);
+    }
+  }
 }
 
 module.exports = BaseInformationController;
