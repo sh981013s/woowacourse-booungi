@@ -1,6 +1,7 @@
 const BaseInformationController = require("./BaseInformationController");
 const RacingGameController = require("./RacingGameController");
 const InputView = require("../view/InputView");
+const OutputView = require("../view/OutputView");
 
 class MainController {
   #baseInformationController;
@@ -17,6 +18,10 @@ class MainController {
 
   readCarNamesInput() {
     InputView.readCarNamesInput(this.processCarNamesInput.bind(this));
+  }
+
+  printError(errorLog) {
+    OutputView.printError(errorLog);
   }
 
   initializeGame() {
