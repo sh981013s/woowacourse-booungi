@@ -10,6 +10,13 @@ class BaseInformationController {
     this.#baseInformationModel = new BaseInformationModel();
   }
 
+  processBaseInformation() {
+    this.#mainController.generateCars(
+      this.#baseInformationModel.getCarNames(),
+      this.#baseInformationModel.getTryCount(),
+    );
+  }
+
   processCarNamesInput(carNamesInput) {
     try {
       validate(carNamesInput);
@@ -24,7 +31,7 @@ class BaseInformationController {
     try {
       validate(tryCountInput);
       this.#baseInformationModel.setTryCount(+tryCountInput);
-      this.#mainController.generateCars(this.#baseInformationModel.getCarNames());
+      this.processBaseInformation();
     } catch (errorLog) {
       this.#mainController.printError(errorLog);
     }

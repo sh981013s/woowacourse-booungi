@@ -12,6 +12,10 @@ class MainController {
     this.#racingGameController = new RacingGameController(this);
   }
 
+  generateCars(carNames, tryCount) {
+    this.#racingGameController.generateCars(carNames, tryCount);
+  }
+
   processCarNamesInput(carNamesInput) {
     this.#baseInformationController.processCarNamesInput(carNamesInput);
   }
