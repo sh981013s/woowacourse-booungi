@@ -36,6 +36,10 @@ class MainController {
     OutputView.printError(errorLog);
   }
 
+  printCaseResult(currentCarsInformation) {
+    OutputView.printCaseResult(currentCarsInformation);
+  }
+
   initializeGame() {
     this.readCarNamesInput();
   }
