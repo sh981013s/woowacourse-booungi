@@ -1,5 +1,5 @@
 const { Console } = require("@woowacourse/mission-utils");
-const { CASE_RESULT } = require("../constants/Messages");
+const { CASE_RESULT, FINAL_WINNER } = require("../constants/Messages");
 const DashMaker = require("../utils/DashMaker");
 
 const OutputView = {
@@ -13,9 +13,13 @@ const OutputView = {
       Console.print(
         `${singleCarInformation.name} : ${DashMaker.getDash(
           singleCarInformation.movement,
-        )}\n`,
+        )}`,
       );
     }
+  },
+
+  printWinner(results) {
+    Console.print(`\n${FINAL_WINNER.MESSAGE}${results.join(", ")}`);
   },
 };
 
