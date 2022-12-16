@@ -16,8 +16,16 @@ class MainController {
     this.#baseInformationController.processCarNamesInput(carNamesInput);
   }
 
+  processTryCountInput(tryCountInput) {
+    this.#baseInformationController.processTryCountInput(tryCountInput);
+  }
+
   readCarNamesInput() {
     InputView.readCarNamesInput(this.processCarNamesInput.bind(this));
+  }
+
+  readTryCount() {
+    InputView.readTryCount(this.processTryCountInput.bind(this));
   }
 
   printError(errorLog) {
