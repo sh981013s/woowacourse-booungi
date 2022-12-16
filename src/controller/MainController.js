@@ -1,3 +1,4 @@
+const { Console } = require("@woowacourse/mission-utils");
 const BaseInformationController = require("./BaseInformationController");
 const RacingGameController = require("./RacingGameController");
 const InputView = require("../view/InputView");
@@ -42,6 +43,10 @@ class MainController {
 
   initializeGame() {
     this.readCarNamesInput();
+  }
+
+  finishGame() {
+    Console.close();
   }
 }
 
