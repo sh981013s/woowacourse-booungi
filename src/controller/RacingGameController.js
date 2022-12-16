@@ -8,6 +8,13 @@ class RacingGameController {
     this.#mainController = mainController;
     this.#racingGameModel = new RacingGameModel();
   }
+
+  calculateCase() {}
+
+  generateCars(carNames) {
+    this.#racingGameModel.generateCars(carNames);
+    this.calculateCase();
+  }
 }
 
 module.exports = RacingGameController;
