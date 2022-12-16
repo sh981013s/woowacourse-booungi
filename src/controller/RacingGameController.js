@@ -9,11 +9,19 @@ class RacingGameController {
     this.#racingGameModel = new RacingGameModel();
   }
 
-  calculateCase() {}
+  calculateCase() {
+    this.#racingGameModel.calculateCase();
+    this.#mainController.printCaseResult(this.#racingGameModel.getCarsInformation());
+  }
 
-  generateCars(carNames) {
+  getResults() {}
+
+  generateCars(carNames, tryCount) {
     this.#racingGameModel.generateCars(carNames);
-    this.calculateCase();
+    for (let i = 0; i < tryCount; i++) {
+      this.calculateCase();
+    }
+    this.getResults();
   }
 }
 

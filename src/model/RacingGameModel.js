@@ -18,6 +18,14 @@ class RacingGameModel {
       this.#cars[i].tryMove();
     }
   }
+
+  getCarsInformation() {
+    const carsInformation = [];
+    for (const singleCar of this.#cars) {
+      carsInformation.push(singleCar.getCarInformation());
+    }
+    return carsInformation;
+  }
 }
 
 module.exports = RacingGameModel;
