@@ -41,6 +41,10 @@ class MainController {
     OutputView.printCaseResult(currentCarsInformation);
   }
 
+  printResult(results) {
+    OutputView.printWinner(results);
+  }
+
   initializeGame() {
     this.readCarNamesInput();
   }
