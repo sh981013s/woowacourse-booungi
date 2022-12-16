@@ -1,5 +1,6 @@
 const BaseInformationModel = require("../model/BaseInformationModel");
-const { validate } = require("../validation/NameInputValidation");
+const TryCountValidation = require("../validation/TryCountValidation");
+const NameInputValidation = require("../validation/NameInputValidation");
 
 class BaseInformationController {
   #mainController;
@@ -19,21 +20,23 @@ class BaseInformationController {
 
   processCarNamesInput(carNamesInput) {
     try {
-      validate(carNamesInput);
+      NameInputValidation.validate(carNamesInput);
       this.#baseInformationModel.setCarNames(carNamesInput.split(","));
       this.#mainController.readTryCount();
     } catch (errorLog) {
       this.#mainController.printError(errorLog);
+      this.#mainController.readCarNamesInput();
     }
   }
 
   processTryCountInput(tryCountInput) {
     try {
-      validate(tryCountInput);
+      TryCountValidation.validate(tryCountInput);
       this.#baseInformationModel.setTryCount(+tryCountInput);
       this.processBaseInformation();
     } catch (errorLog) {
       this.#mainController.printError(errorLog);
+      this.#mainController.readTryCount();
     }
   }
 }
