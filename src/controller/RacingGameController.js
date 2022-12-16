@@ -14,7 +14,11 @@ class RacingGameController {
     this.#mainController.printCaseResult(this.#racingGameModel.getCarsInformation());
   }
 
-  getResults() {}
+  getResults() {
+    const results = this.#racingGameModel.getResults();
+    this.#mainController.printResult(results);
+    this.#mainController.finishGame();
+  }
 
   generateCars(carNames, tryCount) {
     this.#racingGameModel.generateCars(carNames);
