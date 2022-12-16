@@ -324,13 +324,6 @@
         "newIsCap": true
       }
     ],
-    "id-length": [
-      "error",
-      {
-        "min": 2,
-        "properties": "never"
-      }
-    ],
     "radix": "error",
     "camelcase": [
       "error"
@@ -351,6 +344,7 @@
     "operator-linebreak": "off",
     "nonblock-statement-body-position": "off",
     "no-plusplus": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "id-length": "off"
   }
 }
