@@ -15,10 +15,16 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "..",
     "paths": {
     }
   },
-  "include": ["src/**/*", "__tests__/**/*"],
-  "exclude": ["node_modules", "cypress", "dist"]
+  "include": [
+    "level1-lunch/src/**/*",
+    "level1-lunch/__tests__/**/*"
+  ],
+  "exclude": ["node_modules",
+    "cypress",
+    "level1-lunch/dist"
+  ]
 }
