@@ -1,5 +1,5 @@
 import "./style.css";
-import Logo from "../../images/Logo.png";
+import Logo from "../../images/logo.png";
 
 interface IHeaderProps {
   renderMovieList: (type: string, searchKeyword?: string) => void;

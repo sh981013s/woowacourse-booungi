@@ -34,7 +34,7 @@ header .search-box > .search-button {
   width: 14px;
   border: 0;
   text-indent: -1000rem;
-  background: url("../../images/search_button.png") transparent no-repeat 0 1px;
+  background: url("search_button.png") transparent no-repeat 0 1px;
   background-size: contain;
 }
 
@@ -50,7 +50,7 @@ header .search-box > .search-button {
   right: 10px;
   width: 24px;
   height: 24px;
-  background-image: url("../../images/search_button.png");
+  background-image: url("search_button.png");
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
