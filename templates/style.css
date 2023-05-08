@@ -1,0 +1,449 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/* Colors *****************************************/
+:root {
+  --primary-color: #ec4a0a;
+  --lighten-color: #f6a88a;
+  --list-hover-color: #f5e3de;
+  --grey-100: #ffffff;
+  --grey-200: #d0d5dd;
+  --grey-300: #667085;
+  --grey-400: #344054;
+  --grey-500: #000000;
+  --red: #ff0000;
+}
+
+/* Typography *************************************/
+.text-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.text-subtitle {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+/* GNB ********************************************/
+.gnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+
+  padding: 0 16px;
+
+  background-color: var(--primary-color);
+}
+
+.gnb__title {
+  color: #fcfcfd;
+}
+
+.gnb__button {
+  height: 40px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.gnb__button img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* 음식점 목록 *****************************************/
+
+.restaurant__favorite__icon {
+  position: absolute;
+  top:10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.restaurant__favorite__icon:hover {
+  animation: shake 1.7s;
+  animation-iteration-count: infinite;
+}
+
+/* 카테고리/정렬 필터 */
+.restaurant-filter-container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 16px;
+  margin-top: 24px;
+}
+
+.restaurant-filter-container-wrapper {
+  height: 60px;
+}
+
+.restaurant-filter-container select {
+  height: 44px;
+  min-width: 125px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: transparent;
+
+  font-size: 16px;
+}
+
+.restaurant-filter {
+  padding: 8px;
+}
+
+/* 음식점 목록 */
+.restaurant-list-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 16px;
+  margin: 16px 0;
+}
+
+.restaurant {
+  display: flex;
+  align-items: flex-start;
+
+  padding: 16px 8px;
+
+  border-bottom: 1px solid #e9eaed;
+  cursor: pointer;
+}
+
+.restaurant:hover {
+  background: var(--list-hover-color)
+}
+
+.restaurant__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+
+  margin-right: 16px;
+
+  border-radius: 50%;
+  background: var(--lighten-color);
+}
+
+.category-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.restaurant__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.restaurant__name {
+  margin: 0;
+}
+
+.restaurant__distance {
+  color: var(--primary-color);
+}
+
+.restaurant__description {
+  display: -webkit-box;
+
+  padding-top: 8px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.default-link {
+  color: inherit
+}
+
+/* 음식점 추가 모달 *****************************************/
+.modal {
+  display: none;
+}
+
+.modal--open {
+  display: block;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.modal-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 88vh;
+
+  padding: 32px 16px;
+
+  border-radius: 8px 8px 0 0;
+  background: var(--grey-100);
+  overflow-y: auto;
+}
+
+.modal-title {
+  margin-bottom: 36px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+}
+
+.form-item label {
+  color: var(--grey-400);
+  font-size: 14px;
+}
+
+.form-item--required label::after {
+  padding-left: 4px;
+
+  color: var(--primary-color);
+  content: '*';
+}
+
+.form-item .help-text {
+  color: var(--grey-300);
+}
+
+.form-item input,
+.form-item textarea,
+.form-item select {
+  padding: 8px;
+  margin: 6px 0;
+
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+
+  font-size: 16px;
+}
+
+.form-item textarea {
+  resize: none;
+}
+
+.form-item select {
+  height: 44px;
+
+  padding: 8px;
+
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+
+  color: var(--grey-300);
+}
+
+input[name='name'],
+input[name='link'] {
+  height: 44px;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button {
+  width: 100%;
+  height: 44px;
+
+  margin-right: 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+
+.button--secondary {
+  border: 1px solid var(--grey-300);
+  background: transparent;
+
+  color: var(--grey-300);
+}
+
+.button--primary {
+  background: var(--primary-color);
+
+  color: var(--grey-100);
+}
+
+.input-error-message {
+  color: var(--red);
+  height: 15px;
+}
+
+.form-item input,
+.form-item textarea,
+.form-item select {
+  padding: 12px;
+  margin: 6px 0;
+
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.form-item textarea {
+  resize: none;
+}
+
+.form-item select {
+  height: 36px;
+
+  padding: 8px;
+
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+
+  color: var(--grey-300);
+}
+
+input[name='name'],
+input[name='link'] {
+  height: 36px;
+}
+
+.button {
+  width: 100%;
+  height: 36px;
+
+  margin-right: 16px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  font-size: 14px;
+  padding: 8px;
+}
+
+
+/* 탭바 *****************************************/
+
+.tabview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabview__nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabview__nav__button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.tabview__nav__button:hover, .tabview__nav__button.active {
+  border-bottom: 2px solid #fd264f;
+  color: #fd264f;
+}
+
+.tabview__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.tabview__content p {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.tabview__content h4 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+/* keyframes *****************************************/
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
