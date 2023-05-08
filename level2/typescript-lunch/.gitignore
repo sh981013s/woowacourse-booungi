@@ -104,7 +104,7 @@ dist
 .tern-port
 
 # ignore IDE files
-.vscode/
+../../level1/1.racing-car/.vscode/
 .idea/
 
 # ignore build files
