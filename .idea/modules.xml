@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/woowacourse-booungi.iml" filepath="$PROJECT_DIR$/.idea/woowacourse-booungi.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-payments.iml" filepath="$PROJECT_DIR$/.idea/react-payments.iml" />
+>>>>>>> payment/step3
     </modules>
   </component>
 </project>
