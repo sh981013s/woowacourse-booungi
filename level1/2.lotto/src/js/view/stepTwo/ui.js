@@ -7,8 +7,8 @@ const ui = {
     moneyInput: $('.money-input'),
     moneyInputErrorText: $('.money-input-error-text'),
     mainContainer: $('.main-container'),
-    lottoBox: $('.lotto-box'),
-    lottoLengthText: $('.lotto-length-text'),
+    lottoBox: $('.2.lotto-box'),
+    lottoLengthText: $('.2.lotto-length-text'),
     targetNumberInputs: $$('.square-input'),
     resultBtn: $('.result-btn'),
     targetNumberInputErrorText: $('.target-number-input-error-text'),
@@ -52,7 +52,7 @@ const ui = {
     this.domList.lottoBox.innerHTML = '';
 
     lottos.forEach(lotto => {
-      const lottoElement = createElement({ tagName: 'li', type: 'class', name: 'lotto-container' });
+      const lottoElement = createElement({ tagName: 'li', type: 'class', name: '2.lotto-container' });
       lottoElement.innerText = `🎟 ${lotto.lottoNum.join(', ')}`;
       this.domList.lottoBox.appendChild(lottoElement);
     });
